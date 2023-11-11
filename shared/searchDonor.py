@@ -1,13 +1,16 @@
+def print_red(text):
+    return f"\033[91m{text}\033[0m"
+
 def search_donor_by_blood_type():
-    print("Select a blood type to search for:")
-    print("1. A+")
-    print("2. A-")
-    print("3. B+")
-    print("4. B-")
-    print("5. AB+")
-    print("6. AB-")
-    print("7. O+")
-    print("8. O-")
+    print("\tSelect a blood type to search for:")
+    print("\t1. A+")
+    print("\t2. A-")
+    print("\t3. B+")
+    print("\t4. B-")
+    print("\t5. AB+")
+    print("\t6. AB-")
+    print("\t7. O+")
+    print("\t8. O-")
 
     blood_type_choices = {
         "1": "A+",
@@ -20,7 +23,7 @@ def search_donor_by_blood_type():
         "8": "O-",
     }
 
-    choice = input("Enter the number of the blood type you want to search for: ")
+    choice = input("\nEnter the number of the blood type you want to search for: ")
     
     selected_blood_type = blood_type_choices.get(choice)
     
@@ -41,6 +44,6 @@ def search_donor_by_blood_type():
             else:
                 print(f"\nNo {selected_blood_type} donors found.")
         except IOError:
-            print("Error: Unable to search for donors. Please try again later.")
+            print(*print_red("\nError: Unable to search for donors. Please try again later."))
     else:
-        print("Invalid choice. Please select a valid blood type.")
+        print(print_red("\nInvalid choice. Please select a valid blood type."))

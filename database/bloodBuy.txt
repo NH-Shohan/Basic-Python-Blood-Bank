@@ -1,0 +1,4 @@
+➤ User ID: 1, Patient Name: Rupa, Age: 23, Blood Group: AB+, Bags Needed: 3, Location: Dhaka, Total Price: $300
+➤ User ID: 2, Patient Name: Shohan, Age: 23, Blood Group: A+, Bags Needed: 4, Location: Dhaka, Total Price: $400
+➤ User ID: 4, Patient Name: Shohan, Age: 23, Blood Group: O-, Bags Needed: 3, Location: Dhaka, Total Price: $750
+➤ User ID: 8, Patient Name: Nahim, Age: 23, Blood Group: B-, Bags Needed: 3, Location: Dhaka, Total Price: $600

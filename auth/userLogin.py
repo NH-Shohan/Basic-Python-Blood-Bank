@@ -1,48 +1,28 @@
-def register_user():
-    username = input("Enter your user username: ")
-    password = input("Enter your user password: ")
-    
-    try:
-        with open("database/users.txt", "a") as file:
-            file.write(f"{username} | {password}\n")
-        print("User registration successful.")
-    except IOError:
-        print("Error: Unable to register the user. Please try again later.")
+from user.userDashboard import user_dashboard
+
+def print_red(text):
+    return f"\033[91m{text}\033[0m"
+def print_blue(text):
+    return f"\033[94m{text}\033[0m"
 
 def login_user():
-    username = input("Enter your user username: ")
+    username = input("\nEnter your user username: ").lower()
     password = input("Enter your user password: ")
-    
+
     try:
         with open("database/users.txt", "r") as file:
             user_data = file.readlines()
-        
-        for user in user_data:
-            user_username, user_password = user.strip().split(" | ")
-            if username == user_username and password == user_password:
-                print("User login successful.")
-                # Perform user tasks here
-                return
-        
-        print("Invalid user credentials. Please try again.")
-    except IOError:
-        print("Error: Unable to process the login. Please try again later.")
 
-def user_auth():
-    while True:
-        print("User Login Menu:")
-        print("1. Register")
-        print("2. Login")
-        print("3. Go back")
-        
-        choice = input("Enter your choice (1/2/3): ")
-        
-        if choice == '1':
-            register_user()
-        elif choice == '2':
-            login_user()
-        elif choice == '3':
-            print("Going back to the main menu.")
-            break
-        else:
-            print("Invalid choice. Please enter 1, 2, or 3.")
+        for user in user_data:
+            user_info = user.strip().split(" | ")
+
+            if len(user_info) == 4:
+                user_id, user_username, user_password, balance = user_info
+                if username == user_username and password == user_password:
+                    print(print_blue("\nUser login successful!"))
+                    user_dashboard(user_id)
+                    return
+
+        print("\nInvalid user credentials. Please try again.")
+    except IOError:
+        print(print_red("\nError: Unable to process the login. Please try again later."))

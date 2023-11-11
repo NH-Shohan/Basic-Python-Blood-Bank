@@ -1,3 +1,6 @@
+def print_red(text):
+    return f"\033[91m{text}\033[0m"
+
 def sort_donors_by_blood_type():
     try:
         with open("database/donorInformation.txt", "r") as file:
@@ -10,6 +13,6 @@ def sort_donors_by_blood_type():
             for sorted_donor in sorted_donors:
                 print(sorted_donor)
         else:
-            print("\nNo donors found in the database.")
+            print(print_red("\nNo donors found in the database."))
     except IOError:
-        print("Error: Unable to sort donors. Please try again later.")
+        print(print_red("\nError: Unable to sort donors. Please try again later."))

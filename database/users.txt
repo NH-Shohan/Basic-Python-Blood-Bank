@@ -1,2 +1,10 @@
-shohan | shohan123
-rupa | rupa123
+1 | shohan | Shohan1234 | 1000
+2 | rupa | Rupa1234 | 600
+3 | abdul | Abdul1234 | 1000
+4 | jitu | Jitu1234 | 1000
+5 | aif | Atif4490 | 1000
+6 | arefin | Arefin3013 | 1000
+7 | rhyme | Rhyme5798 | 1000
+8 | zerin | Zerin4430 | 400
+9 | mahamoda | Mahamoda3456 | 1000
+10 | sumona | Sumona7489 | 1000

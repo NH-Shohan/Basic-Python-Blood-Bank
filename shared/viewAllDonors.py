@@ -1,3 +1,6 @@
+def print_red(text):
+    return f"\033[91m{text}\033[0m"
+
 def view_all_donors():
     try:
         with open("database/donorInformation.txt", "r") as file:
@@ -10,4 +13,4 @@ def view_all_donors():
         else:
             print("\nNo donor information available.")
     except IOError:
-        print("Error: Unable to view donor information. Please try again later.")
+        print(print_red("\nError: Unable to view donor information. Please try again later."))

@@ -1,3 +1,8 @@
+def print_red(text):
+    return f"\033[91m{text}\033[0m"
+def print_blue(text):
+    return f"\033[94m{text}\033[0m"
+
 def edit_donor():
     donor_id = input("Enter the ID of the donor you want to edit: ")
     
@@ -37,8 +42,8 @@ def edit_donor():
             with open("database/donorInformation.txt", "w") as file:
                 file.writelines(donors)
             
-            print("\nDonor information updated successfully.")
+            print(print_blue("\nDonor information updated successfully."))
         else:
-            print(f"No donor found with ID {donor_id}.")
+            print(print_red(f"\nNo donor found with ID {donor_id}."))
     except IOError:
-        print("Error: Unable to edit donor information. Please try again later.")
+        print(print_red("\nError: Unable to edit donor information. Please try again later."))
