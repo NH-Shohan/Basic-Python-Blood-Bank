@@ -4,6 +4,8 @@ def print_red(text):
     return f"\033[91m{text}\033[0m"
 def print_blue(text):
     return f"\033[94m{text}\033[0m"
+def print_yellow(text):
+    return f"\033[93m{text}\033[0m"
 
 def export_transaction(user_id):
     try:
@@ -24,6 +26,6 @@ def export_transaction(user_id):
                     
                     print(print_blue(f"\nTransaction report exported successfully. File: {file_name}"))
             else:
-                print(print_red("\nNo transactions found for the user."))
+                print(print_yellow("\nNo transactions found for the user."))
     except IOError:
         print(print_red("\nError: Unable to export the transaction report."))

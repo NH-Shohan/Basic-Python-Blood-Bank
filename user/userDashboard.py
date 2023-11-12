@@ -4,6 +4,9 @@ from shared.viewAllDonors import view_all_donors
 from user.buyBlood import buy_blood
 from user.exportTransaction import export_transaction
 
+def print_yellow(text):
+    return f"\033[93m{text}\033[0m"
+
 def user_dashboard(user_id):
     while True:
         with open("database/users.txt", "r") as file:
@@ -42,4 +45,4 @@ def user_dashboard(user_id):
             print("\nLogging out. Goodbye!")
             break
         else:
-            print("\nInvalid choice. Please enter a number from 1 to 8.")
+            print(print_yellow("\nInvalid choice. Please enter a number from 1 to 8."))

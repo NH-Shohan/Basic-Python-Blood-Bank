@@ -13,6 +13,8 @@ def print_red(text):
     return f"\033[91m{text}\033[0m"
 def print_blue(text):
     return f"\033[94m{text}\033[0m"
+def print_yellow(text):
+    return f"\033[93m{text}\033[0m"
 
 def calculate_blood_price(blood_group, bags_needed):
     total_price = prices.get(blood_group, 0) * bags_needed
@@ -24,7 +26,7 @@ def validate_input(prompt, validation_func):
         if validation_func(user_input):
             return user_input
         else:
-            print("Invalid input. Please try again.")
+            print(print_red("Invalid input. Please try again."))
 
 def is_valid_age(age):
     return age.isdigit() and 0 < int(age) < 150
@@ -66,13 +68,19 @@ def buy_blood(user_id):
 
     total_price = calculate_blood_price(blood_group, int(bags_needed))
     
-    print(f"\nYour Currect Balance is:            ${user_balance}")
+    print(f"\n\t+---------------------------------------------+")
+    print(f"\t|  Your Current Balance is:            ${user_balance}  |")
+    print(f"\t|---------------------------------------------|")
     if blood_group == 'AB+' or blood_group == 'AB-':
-        print(f"Per Bag {blood_group} blood is:               ${prices.get(blood_group, 0)}")
+        print(f"\t|  Per Bag {blood_group} blood is:               ${prices.get(blood_group, 0)}   |")
     else:
-        print(f"Per Bag {blood_group} blood is:                ${prices.get(blood_group, 0)}")
-    print(f"Total Blood Price:                  ${total_price}")
-    print(f"Your balance Will be:               ${user_balance - total_price}")
+        print(f"\t|  Per Bag {blood_group} blood is:                ${prices.get(blood_group, 0)}   |")
+    print(f"\t|---------------------------------------------|")
+    print(f"\t|  Total Blood Price:                  ${total_price}   |")
+    print(f"\t|---------------------------------------------|")
+    print(f"\t|  Your balance Will be:               ${user_balance - total_price}   |")
+    print(f"\t+---------------------------------------------+")
+
 
     confirm = input("\nDo you want to proceed with the purchase? (y/n): ").lower()
 
@@ -95,7 +103,7 @@ def buy_blood(user_id):
 
     if confirm == 'y':
         if total_price > existing_user_balance:
-            print(print_red("\nError: Insufficient balance. Purchase canceled."))
+            print(print_yellow("\nInsufficient balance. Purchase canceled."))
         else:
             existing_user_balance -= total_price
 
@@ -125,4 +133,4 @@ def buy_blood(user_id):
                 print(print_red("\nError: Unable to record the transaction. Please try again later."))
 
     else:
-        print("\nPurchase canceled!")
+        print(print_yellow("\nPurchase canceled!"))

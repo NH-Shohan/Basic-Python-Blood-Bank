@@ -1,5 +1,7 @@
 def print_red(text):
     return f"\033[91m{text}\033[0m"
+def print_yellow(text):
+    return f"\033[93m{text}\033[0m"
 
 def sort_donors_by_blood_type():
     try:
@@ -13,6 +15,6 @@ def sort_donors_by_blood_type():
             for sorted_donor in sorted_donors:
                 print(sorted_donor)
         else:
-            print(print_red("\nNo donors found in the database."))
+            print(print_yellow("\nNo donors found in the database."))
     except IOError:
         print(print_red("\nError: Unable to sort donors. Please try again later."))

@@ -1,9 +1,9 @@
 from admin.adminDashboard import admin_dashboard
 
-def print_red(text):
-    return f"\033[91m{text}\033[0m"
 def print_blue(text):
     return f"\033[94m{text}\033[0m"
+def print_yellow(text):
+    return f"\033[93m{text}\033[0m"
 
 def login_as_admin():
     username = input("\nEnter your admin username: ")
@@ -19,4 +19,4 @@ def login_as_admin():
             admin_dashboard()
             return
     
-    print(print_red("\nInvalid admin credentials. Please try again."))
+    print(print_yellow("\nInvalid admin credentials. Please try again."))

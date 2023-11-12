@@ -4,6 +4,8 @@ def print_red(text):
     return f"\033[91m{text}\033[0m"
 def print_blue(text):
     return f"\033[94m{text}\033[0m"
+def print_yellow(text):
+    return f"\033[93m{text}\033[0m"
 
 def login_user():
     username = input("\nEnter your user username: ").lower()
@@ -23,6 +25,6 @@ def login_user():
                     user_dashboard(user_id)
                     return
 
-        print("\nInvalid user credentials. Please try again.")
+        print(print_yellow("\nInvalid user credentials. Please try again."))
     except IOError:
         print(print_red("\nError: Unable to process the login. Please try again later."))

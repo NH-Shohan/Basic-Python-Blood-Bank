@@ -3,8 +3,8 @@ from auth.adminLogin import login_as_admin
 from auth.userAuth import user_auth
 from shared.message import thanks_message, welcome_message
 
-def print_red(text):
-    return f"\033[91m{text}\033[0m"
+def print_yellow(text):
+    return f"\033[93m{text}\033[0m"
 
 welcome_message()
 
@@ -24,4 +24,4 @@ while True:
         thanks_message()
         break
     else:
-        print(print_red("\nInvalid choice. Please enter 1, 2, or 3."))
+        print(print_yellow("\nInvalid choice. Please enter 1, 2, or 3."))

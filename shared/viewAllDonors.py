@@ -1,5 +1,7 @@
 def print_red(text):
     return f"\033[91m{text}\033[0m"
+def print_yellow(text):
+    return f"\033[93m{text}\033[0m"
 
 def view_all_donors():
     try:
@@ -11,6 +13,6 @@ def view_all_donors():
             for donor in donors:
                 print(donor)
         else:
-            print("\nNo donor information available.")
+            print(print_yellow("\nNo donor information available."))
     except IOError:
         print(print_red("\nError: Unable to view donor information. Please try again later."))

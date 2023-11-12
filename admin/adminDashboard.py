@@ -7,8 +7,8 @@ from shared.searchDonor import search_donor_by_blood_type
 from shared.sortDonor import sort_donors_by_blood_type
 from shared.viewAllDonors import view_all_donors
 
-def print_red(text):
-    return f"\033[91m{text}\033[0m"
+def print_yellow(text):
+    return f"\033[93m{text}\033[0m"
 
 def admin_dashboard():
     while True:
@@ -51,4 +51,4 @@ def admin_dashboard():
             print("\nLogging out of admin account.")
             break
         else:
-            print(print_red("\nInvalid choice. Please enter a number from 1 to 9."))
+            print(print_yellow("\nInvalid choice. Please enter a number from 1 to 9."))

@@ -1,5 +1,7 @@
 def print_red(text):
     return f"\033[91m{text}\033[0m"
+def print_yellow(text):
+    return f"\033[93m{text}\033[0m"
 
 def search_donor_by_blood_type():
     print("\tSelect a blood type to search for:")
@@ -42,8 +44,8 @@ def search_donor_by_blood_type():
                 for found_donor in found_donors:
                     print(found_donor)
             else:
-                print(f"\nNo {selected_blood_type} donors found.")
+                print(print_yellow(f"\nNo {selected_blood_type} donors found."))
         except IOError:
-            print(*print_red("\nError: Unable to search for donors. Please try again later."))
+            print(print_red("\nError: Unable to search for donors. Please try again later."))
     else:
-        print(print_red("\nInvalid choice. Please select a valid blood type."))
+        print(print_yellow("\nInvalid choice. Please select a valid blood type."))

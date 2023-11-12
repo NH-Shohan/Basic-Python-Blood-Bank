@@ -1,8 +1,8 @@
 from auth.registerUser import register_user
 from auth.userLogin import login_user
 
-def print_red(text):
-    return f"\033[91m{text}\033[0m"
+def print_yellow(text):
+    return f"\033[93m{text}\033[0m"
 
 def user_auth():
     while True:
@@ -21,4 +21,4 @@ def user_auth():
             print("\nGoing back to the main menu.")
             break
         else:
-            print(print_red("\nInvalid choice. Please enter 1, 2, or 3."))
+            print(print_yellow("\nInvalid choice. Please enter 1, 2, or 3."))
