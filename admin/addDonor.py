@@ -18,7 +18,7 @@ def add_donor():
     contact = input("Enter contact information: ")
     location = input("Enter donor's location: ")
 
-    donor_info = f"ID: {last_donor_id} ➤ Name: {name},  Age: {age},  Blood Group: {blood_group},  Contact: {contact},  Location: {location} \n\n"
+    donor_info = f"\nID: {last_donor_id} ➤ Name: {name},  Age: {age},  Blood Group: {blood_group},  Contact: {contact},  Location: {location}"
 
     try:
         with open("database/donorInformation.txt", "a") as file:
